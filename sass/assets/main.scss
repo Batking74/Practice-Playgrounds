@@ -1,0 +1,74 @@
+// Select the nav list item that has a ul inside
+// nav li:has(> ul)::after {
+//     content: ;
+// }
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+$width1: 200px;
+$width2: 250px;
+$height2: 300px;
+
+body {
+    display: grid;
+    row-gap: 500px;
+}
+
+
+#main-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, $width1);
+    margin: 50px 50px 0 50px;
+    justify-content: center;
+    gap: 20px;
+    div {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: red;
+        height: $width1;
+        width: $width1;
+        font-size: 30px;
+    }
+}
+
+#main-grid2 {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, $height2);
+    margin: 50px 50px 0 50px;
+    justify-content: center;
+    gap: 20px;
+    div {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 300px;
+        background: red;
+        font-size: 30px;
+        border-radius: 30px;
+    }
+    div:nth-child(1), div:nth-child(4) {
+        background: blue;
+        grid-column: span 2;
+    }
+    // div:nth-child(1), div:nth-child(5) {
+    //     background: blue;
+    //     grid-column: span 2;
+    // }
+    div:last-child {
+        background: green;
+        grid-column-start: 4;
+        grid-row-start: 1;
+        height: 100%;
+        grid-row-end: span 2;
+    }
+    // div:nth-child(3) {
+    //     background: green;
+    //     height: 100%;
+    //     grid-row: span 2;
+    // }
+}

@@ -1,0 +1,29 @@
+div {
+    animation: test 4s;
+    animation-iteration-count: infinite;
+    /* animation-direction: alternate; */
+    animation-fill-mode: backwards;
+}
+
+/* div:hover {
+    background: green;
+    transition: 1s;
+} */
+
+/* Key Frame Named test */
+@keyframes test {
+    from {
+        background-color: blue;
+    }
+    /* The larger the percentages the longer the animation will persist until it moves onto the next */
+    50% {
+        background-color: green;
+    }
+    80% {
+        background-color: yellow;
+    }
+    to {
+        
+        background-color: red;
+    }
+}
