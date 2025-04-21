@@ -15,3 +15,18 @@ console.log(blob);
 // Set as href
 // a.href = url;
 // a.download = 'help.csv'
+
+
+
+const users = [
+    { name: 'Alice', age: 25 },
+    { name: 'Bob', age: 30 },
+    { name: 'Charlie', age: 35 }
+];
+console.table(users);
+
+
+console.time('Nazir Knuckles')
+
+
+console.timeEnd('Nazir Knuckles')
