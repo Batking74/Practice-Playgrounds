@@ -142,7 +142,7 @@ optimizer = torch.optim.SGD(params=model_0.parameters(), lr=0.01) # lr = Learnin
 # An epoch is one loop through the data
 
 
-epochs = 1
+epochs = 500
 
 for epoch in range(epochs):
     # Setting the model to training mode
@@ -153,6 +153,7 @@ for epoch in range(epochs):
     
     # 2. Calaculate the loss
     loss = loss_fn(y_pred, y_train)
+    print(f"Loss: {loss}")
     
     # 3. Optimizer zero grad
     optimizer.zero_grad()
@@ -163,10 +164,11 @@ for epoch in range(epochs):
     # 5. Step the optimizer (perform gradient descent)
     optimizer.step()
     
-    # model_0.eval() # Turns off gradient tracking
+    model_0.eval() # Turns off gradient tracking
+    model_0.state_dict()
 
 
-
+print(model_0.state_dict())
 
 
 
@@ -193,3 +195,6 @@ for epoch in range(epochs):
 
 
 # Bottom of graph is called convergence
+
+
+# What we mean by learning is that we want to find which weights and biases minimize a certain cost function
